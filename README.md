@@ -1,50 +1,51 @@
-# React + TypeScript + Vite
+# Chrome Extension Installation Guide
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Follow the steps below to install the Chrome extension built using TypeScript and React with Vite:
 
-Currently, two official plugins are available:
+## Prerequisites
+Ensure you have the following installed on your system:
+- Node.js (version 14 or higher)
+- npm (Node Package Manager)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Installation Steps
 
-## Expanding the ESLint configuration
+1. **Clone the Repository**
+   ```bash
+   git clone https://github.com/saifalikhan9/Extention
+   ```
+   Replace `https://github.com/saifalikhan9/Extention` with the URL of your repository.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+2. **Navigate to the Root Folder**
+   ```bash
+   cd <repository-folder>
+   ```
+   Replace `<repository-folder>` with the name of the cloned repository folder.
 
-- Configure the top-level `parserOptions` property like this:
+3. **Install Dependencies**
+   Run the following command to install all required dependencies:
+   ```bash
+   npm install
+   ```
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+4. **Build the Extension**
+   Use the following command to build the project:
+   ```bash
+   npm run dev
+   ```
+   This will generate a folder named `dist` in the root directory.
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+5. **Load the Extension in Chrome**
+   - Open Google Chrome and navigate to `chrome://extensions/`.
+   - Enable "Developer mode" (toggle is located at the top-right corner).
+   - Click on the "Load unpacked" button.
+   - Select the `dist` folder generated in the previous step.
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+6. **Verify Installation**
+   The extension should now be visible in your Chrome extensions list. If applicable, pin it to the toolbar for easy access.
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+## Notes
+- Ensure you rebuild the project (`npm run dev`) after making any changes to the source code.
+- For troubleshooting or further development instructions, refer to the project's documentation or contact the developer.
+
+Enjoy using your Chrome extension!
+
